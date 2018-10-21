@@ -10,9 +10,11 @@ import {scrollTellying} from './scroll/scrolltell.js';
 
 
 var xyChart;
+var chart;
 
 function resize() {
    xyChart.draw()
+   chart.draw()
 }
 
 
@@ -26,6 +28,12 @@ function init() {
   })
 
 scrollTellying(xyChart);
+
+  chart = new Chart({
+    data:data,
+    conEl:document.querySelector('#flow_chart')
+  })
+
 
 
  // const chart = new Chart({

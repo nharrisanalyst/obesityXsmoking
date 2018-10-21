@@ -13,15 +13,16 @@ var names =[
 
 export class Chart {
   constructor(config){
-    this.el = config.el;
+    this.el = config.conEl;
     this.data = config.data;
+
     this.draw()
   }
   draw(){
     this.el.innerHTML = '';
     this.width = this.el.clientWidth
-    console.log(this.width)
-    this.height= this.width*2;
+
+    this.height= this.width;
     this.margin = {
       t:25,
       r:25,
@@ -45,7 +46,7 @@ export class Chart {
       const m = this.margin;
 
       this.yScale = d3Scale.scaleLinear()
-                           .domain([1,0])
+                           .domain([.5,0])
                            .range([m.b,this.height-(m.t+m.b)]);
 
       this.xStart = m.l;
@@ -61,6 +62,7 @@ export class Chart {
     }
 
     addLines(){
+          console.log(this.data);
             this.plot.selectAll('line')
                 .data(this.data)
                 .enter()
