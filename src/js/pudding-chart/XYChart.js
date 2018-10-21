@@ -28,6 +28,8 @@ export class XYChart{
             bottom: 45,
             left: 50
         };
+    console.log(this.conEl)
+    console.log()
     this.conEl.innerHTML='';
     this.width = this.conEl.offsetWidth-this.margin.right;
     this.height = this.width/2;
