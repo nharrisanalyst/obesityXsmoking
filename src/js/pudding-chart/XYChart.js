@@ -20,16 +20,16 @@ export class XYChart{
 
   }
   draw(){
+    console.log();
     console.log(this.stage)
-    console.log('drawing');
+
     this.margin = {
             top: 20,
             right: 75,
             bottom: 45,
             left: 50
         };
-    console.log(this.conEl)
-    console.log()
+
     this.conEl.innerHTML='';
     this.width = this.conEl.offsetWidth-this.margin.right;
     this.height = this.width/2;
@@ -57,14 +57,12 @@ export class XYChart{
                         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')')
         this.createScales();
         this.createAxis();
-        console.log('stage');
-        console.log(this.stage)
+
+
         if(this.stage>-1){this.addPoints()}
-        console.log('stage');
-        console.log(this.stage)
+
         if(this.stage>0){this.stage0()}
-        console.log('stage');
-        console.log(this.stage)
+        
         if(this.stage>1){this.stage1()}
 
 
@@ -127,6 +125,7 @@ export class XYChart{
 
   }
   deletePoints(){
+    this.stage=-1;
     this.plot.select('.xy-points').remove();
   }
 
@@ -150,6 +149,7 @@ export class XYChart{
 
   }
   stage0Remove(){
+    this.stage=0;
       this.plot.select('.line-container').remove();
   }
 
@@ -180,6 +180,7 @@ export class XYChart{
 
   }
   stage1Remove(){
+    this.stage=1;
     this.plot.select('.categorical-scale').remove();
     this.plot.select('.xy-points').selectAll('circle')
                              .transition()
