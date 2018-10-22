@@ -7,7 +7,7 @@ import {Chart} from './pudding-chart/Chart.js';
 import data from '../assets/data/count_obesity_cost.json';
 import {XYChart} from './pudding-chart/XYChart.js';
 import {scrollTellying} from './scroll/scrolltell.js';
-
+import {scrollTellyingChart} from './scroll/scrolltwo.js';
 
 var xyChart;
 var chart;
@@ -19,7 +19,7 @@ function resize() {
 
 
 function init() {
-  console.log(insurance);
+
 
  xyChart = new XYChart({
    data:insurance,
@@ -34,6 +34,7 @@ scrollTellying(xyChart);
     conEl:document.querySelector('#flow_chart')
   })
 
+scrollTellyingChart(chart);
 
 
  // const chart = new Chart({
