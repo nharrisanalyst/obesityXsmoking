@@ -56,6 +56,9 @@ export class Chart {
       this.addLegend();
       this.addLabels();
 
+      if(this.stage>0){this.stage1()}
+      
+
     }
 
     createScales(){
