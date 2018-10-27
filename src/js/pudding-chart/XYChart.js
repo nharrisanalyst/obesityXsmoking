@@ -20,8 +20,7 @@ export class XYChart{
 
   }
   draw(){
-    console.log();
-    console.log(this.stage)
+
 
     this.margin = {
             top: 20,
@@ -62,7 +61,7 @@ export class XYChart{
         if(this.stage>-1){this.addPoints()}
 
         if(this.stage>0){this.stage0()}
-        
+
         if(this.stage>1){this.stage1()}
 
 
@@ -191,6 +190,7 @@ export class XYChart{
 
   stage1Legend(){
     //set scale for legend
+
       const ordinalScale =  d3.scaleOrdinal().domain(["Obese & Smoker", "Obese Only", "Smoker Only", "Non Smoker Non Obese"])
                                              .range([this.colors(3),this.colors(2),this.colors(1), this.colors(0)])
 

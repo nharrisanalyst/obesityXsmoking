@@ -2,18 +2,11 @@ import 'intersection-observer';
 import scrollama from 'scrollama';
 
 export const scrollTellying = (chart)  => {
-    const $container = d3.select('#scroll');
-    const $graphic  = d3.select('#scroll__graphic');
-    const $chart  = d3.select('#xy-chart-container');
-    const $text  = d3.select('.scroll__text');
-    const $step = $text.selectAll('.step');
 
     const scroller = scrollama();
 
     const handleStepEnter=(response)  =>{
-             response.element.classList.remove('inactive');
-             response.element.classList.add('active');
-            console.log(response)
+
          if(response.direction==='down'){
             switch(response.index) {
                 case 0:
@@ -47,8 +40,7 @@ export const scrollTellying = (chart)  => {
     }
 
   const handleStepExit = (response)  =>{
-           console.log('exit')
-           console.log(response);
+
            if(response.direction==='up'){
           switch(response.index) {
               case 0:
@@ -67,7 +59,7 @@ export const scrollTellying = (chart)  => {
      scroller.setup({
        step: '.scroll__text .step',
        offset:.8,
-       debug:true
+       debug:false
       }).onStepEnter(handleStepEnter)
         .onStepExit(handleStepExit);
 
