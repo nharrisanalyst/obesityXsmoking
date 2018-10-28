@@ -8,10 +8,10 @@
 
 
 #xy-chart-container
-    position: sticky;
+    position: sticky
+    top:0
+    left: 0
 
-    left: 0;
-    bottom: auto;
     width:100%
 
 #flow_chart
@@ -23,9 +23,17 @@
 .is-fixed
   position:fixed
 
-.step
+.step p
   margin:auto
   max-width:400px
+  box-sizing: border-box
+  background-color: white;
+  z-index: 1000 !important;
+  opacity:1 !important
+  box-shadow: 0 0 12px 3px lightgrey
+  position:relative
+  padding: 1em
+
 
 .first_step
   margin:auto
@@ -57,9 +65,16 @@
   margin-top:100px
   margin-bottom:100px
 
-.step2
+.step2 p
   margin:auto
   max-width:400px
+  box-sizing: border-box
+  background-color: white;
+  z-index: 1000 !important;
+  opacity:1 !important
+  box-shadow: 0 0 12px 3px lightgrey
+  position:relative
+  padding: 1em
 
 #outro
   margin-top:100px

@@ -7,6 +7,8 @@ export const scrollTellying = (chart)  => {
 
     const handleStepEnter=(response)  =>{
 
+      d3.select(response.element).attr('class','step active')
+
          if(response.direction==='down'){
             switch(response.index) {
                 case 0:
@@ -40,7 +42,7 @@ export const scrollTellying = (chart)  => {
     }
 
   const handleStepExit = (response)  =>{
-
+           d3.select(response.element).attr('class','step inactive');
            if(response.direction==='up'){
           switch(response.index) {
               case 0:
@@ -58,7 +60,7 @@ export const scrollTellying = (chart)  => {
 
      scroller.setup({
        step: '.scroll__text .step',
-       offset:.8,
+       offset:.66,
        debug:false
       }).onStepEnter(handleStepEnter)
         .onStepExit(handleStepExit);
