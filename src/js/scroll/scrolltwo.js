@@ -49,8 +49,8 @@ const handleStepEnter=(response)  =>{
 
 
 const handleStepExit = (response)  =>{
-         console.log('exit')
-         console.log(response);
+         response.element.classList.remove('active');
+         response.element.classList.add('inactive');
          if(response.direction==='up'){
         switch(response.index) {
             case 0:
@@ -67,7 +67,7 @@ const scroller = scrollama();
 
 scroller.setup({
   step:'.step2',
-  offset:.8,
+  offset:.66,
   debug:true
  }).onStepEnter(handleStepEnter)
    .onStepExit(handleStepExit);

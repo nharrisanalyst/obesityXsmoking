@@ -39,7 +39,7 @@ gulp.task('html-dist', () => {
 		.partials('./src/html/partials/**/*.hbs')
 		.helpers('./src/html/helpers/*.js')
 		.data('./template-data/**/*.{js,json}')
-		.data({ basepath: 'https://pudding.cool/', timestamp: Date.now() });
+		.data({ basepath: 'http://www.independentviz.com/', timestamp: Date.now() });
 
 	return gulp
 		.src(srcIndex)
@@ -59,7 +59,7 @@ gulp.task('html-boilerplate', () => {
 		.partials('./src/html/partials/**/*.hbs')
 		// .helpers('./src/html/helpers/*.js')
 		.data('./template-data/**/*.{js,json}')
-		.data({ basepath: 'https://pudding.cool/', timestamp: Date.now() });
+		.data({ basepath: 'http://www.independentviz.com/', timestamp: Date.now() });
 
 	return gulp
 		.src(srcIndex)
@@ -85,7 +85,7 @@ gulp.task('html-style-guide', () => {
 		.partials('./src/html/partials/**/*.hbs')
 		// .helpers('./src/html/helpers/*.js')
 		.data('./template-data/**/*.{js,json}')
-		.data({ basepath: 'https://pudding.cool/', timestamp: Date.now() });
+		.data({ basepath: 'http://www.independentviz.com/', timestamp: Date.now() });
 
 	return gulp
 		.src('./src/html/style-guide.hbs')
