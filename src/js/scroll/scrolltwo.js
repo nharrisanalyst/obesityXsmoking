@@ -68,7 +68,6 @@ const scroller = scrollama();
 scroller.setup({
   step:'.step2',
   offset:.66,
-  debug:true
  }).onStepEnter(handleStepEnter)
    .onStepExit(handleStepExit);
 
